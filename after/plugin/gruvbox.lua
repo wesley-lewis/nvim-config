@@ -1,5 +1,5 @@
-require("gruvbox").setup({
-	contrast = "hard",
-	-- transparent_mode = true,
-})
-vim.cmd("colorscheme gruvbox")
+-- require("gruvbox").setup({
+-- 	contrast = "hard",
+-- 	-- transparent_mode = true,
+-- })
+-- vim.cmd("colorscheme gruvbox")
