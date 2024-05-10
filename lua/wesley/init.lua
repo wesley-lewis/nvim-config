@@ -17,12 +17,12 @@ vim.keymap.set("n", "<C-]>", "<cmd>tabnew | Ex<CR>")
 
 -- vim.cmd[[ highlight IncSearch guibg=#61afef]]
 -- Change highlight color on yank
--- vim.cmd[[
--- augroup YankHighlight
---     autocmd!
---     autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup='IncSearch', timeout=200})
--- augroup END
--- ]]
+vim.cmd[[
+augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup='IncSearch', timeout=200})
+augroup END
+]]
 
 -- My bgcolor: #1f2329 : Less dark
 -- My bgcolor: #031517
