@@ -1,19 +1,26 @@
 require("wesley.remap")
 require("wesley.lazy")
 
-
--- ToggleTerm keybindings --
-vim.keymap.set('n', '<M-1>j', ':ToggleTerm 1<CR>')
-vim.keymap.set('n', '<M-2>j', ':ToggleTerm 2<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Tabs in neovim
-vim.keymap.set('n', "<C-\\>", "<cmd>tabnew | terminal<CR>")
-vim.keymap.set("n", "<leader>tl", "<cmd>tabnext<CR>")
-vim.keymap.set("n", "<leader>th", "<cmd>tabprevious<CR>")
-vim.keymap.set("n", "<C-]>", "<cmd>tabnew | Ex<CR>")
+-- ToggleTerm keybindings --
+vim.keymap.set('n', "<C-\\>", function()
+	local term_no = vim.fn.input("Enter terminal no: ")
+	vim.cmd("ToggleTerm " .. term_no)
+end)
 
+vim.diagnostic.config({
+	virtual_text = false,
+	underline = false,
+})
 
+if vim.g.neovide then
+	vim.g.neovide_hide_mouse_when_typing = true
+	vim.g.neovide_cursor_animation_length = 0.05
+	vim.g.neovide_cursor_trail_size = 0
+	vim.g.neovide_transparency = 1
+	vim.o.guifont = "FiraCode Nerd Font:h11"
+end
 
 -- vim.cmd[[ highlight IncSearch guibg=#61afef]]
 -- Change highlight color on yank
@@ -22,6 +29,13 @@ augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup='IncSearch', timeout=200})
 augroup END
+]]
+
+vim.cmd[[
+augroup custom_papercolorslim_transparent_background
+  autocmd!
+  autocmd ColorScheme PaperColorSlim highlight Normal guibg=NONE
+augroup end
 ]]
 
 -- My bgcolor: #1f2329 : Less dark
@@ -34,7 +48,9 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.swapfile = false
+vim.opt.linespace = 1
 
+-- vim.o.guifont = "JetBrainsMonoNL Nerd Font"
 vim.o.hlsearch = true
 vim.o.mouse = 'a'
 vim.o.breakindent = true

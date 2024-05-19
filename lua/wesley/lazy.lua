@@ -48,64 +48,39 @@ require("lazy").setup({
 		end
 	},
 	{"akinsho/toggleterm.nvim"},
+	-- Tabs
+
 	{
-		"xiyaowong/transparent.nvim",
+		'romgrk/barbar.nvim',
+		dependencies = {
+			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+		},
+		opts = {},
+		version = '^1.0.0', -- optional: only update when a new 1.x version is released
+	},
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+		}
 	},
 
 	-- Colorschemes
-	--
-	-- {
-	-- 	-- "navarasu/onedark.nvim",
-	-- 	"olimorris/onedarkpro.nvim",
-	-- 	config = function()
-	-- 		require("onedarkpro").setup({
-	-- 			colors = {
-	-- 				onedark_vivid = { bg = "#1f2329" },
-	-- 			}
-	-- 		})
-	-- 		vim.cmd [[ colorscheme onedark_vivid ]]
-	-- 	end,
-	-- }
-
-	-- {
-	-- 	"gbprod/nord.nvim",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme nord")
-	-- 	end,
-	-- }
-
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme rose-pine")
-	-- 	end,
-	-- }
-
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme catppuccin")
-	-- 	end,
-	-- }
-
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme gruvbox")
-	-- 	end,
-	-- }
 	{
-		"rebelot/kanagawa.nvim",
-		config = function()
-			vim.cmd("colorscheme kanagawa-dragon")
-		end,
+		"gbprod/nord.nvim",
 	},
-	
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme tokyonight-night")
-	-- 	end,
-	-- }
+	{
+		"rose-pine/neovim",
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
+	},
+	{
+		"pappasam/papercolor-theme-slim"
+	},
 })
