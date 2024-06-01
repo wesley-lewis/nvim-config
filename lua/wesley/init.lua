@@ -9,6 +9,12 @@ vim.keymap.set('n', "<C-\\>", function()
 	vim.cmd("ToggleTerm " .. term_no)
 end)
 
+vim.keymap.set('n', "<C-]>", function()
+	-- creating a new separate terminal tab
+	vim.cmd("tabnew")
+	vim.cmd("terminal")
+end)
+
 vim.diagnostic.config({
 	virtual_text = false,
 	underline = false,
@@ -16,10 +22,11 @@ vim.diagnostic.config({
 
 if vim.g.neovide then
 	vim.g.neovide_hide_mouse_when_typing = true
-	vim.g.neovide_cursor_animation_length = 0.05
+	vim.g.neovide_cursor_animation_length = 0
 	vim.g.neovide_cursor_trail_size = 0
+	vim.g.neovide_scroll_animation_length = 0
 	vim.g.neovide_transparency = 1
-	vim.o.guifont = "FiraCode Nerd Font:h11"
+	vim.o.guifont = "FiraCode Nerd Font:h12"
 end
 
 -- vim.cmd[[ highlight IncSearch guibg=#61afef]]
@@ -32,10 +39,7 @@ augroup END
 ]]
 
 vim.cmd[[
-augroup custom_papercolorslim_transparent_background
-  autocmd!
-  autocmd ColorScheme PaperColorSlim highlight Normal guibg=NONE
-augroup end
+  autocmd VimEnter * Neotree filesystem reveal right
 ]]
 
 -- My bgcolor: #1f2329 : Less dark

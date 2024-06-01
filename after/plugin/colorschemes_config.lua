@@ -1,10 +1,11 @@
 require("gruvbox").setup({
 	contrast = "hard",
-	transparent_mode = true,
+	dim_inactive = true,
+	-- transparent_mode = true,
 })
 
 require("nord").setup({
-	transparent = true,
+	-- transparent = true,
 })
 
 require("rose-pine").setup({
@@ -13,11 +14,12 @@ require("rose-pine").setup({
 		terminal = true,
 	},
 	styles = {
-		transparency = true,
+		-- transparency = true,
 		italic = false,
 	}
 })
 
+vim.g.rasmus_variant = "monochrome"
 
 -- Setting the colorscheme
-vim.cmd("colorscheme rose-pine-main")
+vim.cmd("colorscheme rasmus")

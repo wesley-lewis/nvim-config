@@ -81,6 +81,6 @@ require("lazy").setup({
 		"ellisonleao/gruvbox.nvim",
 	},
 	{
-		"pappasam/papercolor-theme-slim"
+		"kvrohit/rasmus.nvim",
 	},
 })
