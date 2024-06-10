@@ -49,7 +49,6 @@ require("lazy").setup({
 	},
 	{"akinsho/toggleterm.nvim"},
 	-- Tabs
-
 	{
 		'romgrk/barbar.nvim',
 		dependencies = {
@@ -59,6 +58,8 @@ require("lazy").setup({
 		opts = {},
 		version = '^1.0.0', -- optional: only update when a new 1.x version is released
 	},
+
+	-- File explorer popup
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
@@ -69,6 +70,9 @@ require("lazy").setup({
 			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		}
 	},
+	{
+		"folke/trouble.nvim",
+	},
 
 	-- Colorschemes
 	{
@@ -77,10 +81,16 @@ require("lazy").setup({
 	{
 		"rose-pine/neovim",
 	},
-	{
-		"ellisonleao/gruvbox.nvim",
-	},
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- },
 	{
 		"kvrohit/rasmus.nvim",
+	},
+	{
+		"navarasu/onedark.nvim",
+	},
+	{
+		"sainnhe/gruvbox-material",
 	},
 })

@@ -3,7 +3,7 @@ require("wesley.lazy")
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- ToggleTerm keybindings --
+-- Custom terminal --
 vim.keymap.set('n', "<C-\\>", function()
 	local term_no = vim.fn.input("Enter terminal no: ")
 	vim.cmd("ToggleTerm " .. term_no)
@@ -30,13 +30,19 @@ if vim.g.neovide then
 end
 
 -- vim.cmd[[ highlight IncSearch guibg=#61afef]]
+
 -- Change highlight color on yank
-vim.cmd[[
-augroup YankHighlight
+-- vim.cmd[[
+-- augroup YankHighlight
+--     autocmd!
+--     autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup='IncSearch', timeout=200})
+-- augroup END
+-- ]]
+
+vim.cmd[[ augroup highlight_yank
     autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup='IncSearch', timeout=200})
-augroup END
-]]
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
+augroup END]]
 
 vim.cmd[[
   autocmd VimEnter * Neotree filesystem reveal right
@@ -53,8 +59,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.swapfile = false
 vim.opt.linespace = 1
+vim.opt.numberwidth = 4
 
--- vim.o.guifont = "JetBrainsMonoNL Nerd Font"
 vim.o.hlsearch = true
 vim.o.mouse = 'a'
 vim.o.breakindent = true
