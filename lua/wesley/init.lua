@@ -26,7 +26,7 @@ if vim.g.neovide then
 	vim.g.neovide_cursor_trail_size = 0
 	vim.g.neovide_scroll_animation_length = 0
 	vim.g.neovide_transparency = 1
-	vim.o.guifont = "FiraCode Nerd Font:h12"
+	vim.o.guifont = "FiraCode Nerd Font:h14"
 end
 
 -- vim.cmd[[ highlight IncSearch guibg=#61afef]]
@@ -52,7 +52,7 @@ vim.cmd[[
 -- My bgcolor: #031517
 
 vim.background = "dark"
-vim.opt.guicursor = "i:block"
+-- vim.opt.guicursor = "i:block"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.number = true

@@ -17,9 +17,8 @@ lsp.on_attach(function(client, bufnr)
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "<leader>gr", require("telescope.builtin").lsp_references, opts)
-  vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+  vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
   vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
   vim.keymap.set("n", "]d", function() vim.diagnostic.goto_next() end, opts)
   vim.keymap.set("n", "[d", function() vim.diagnostic.goto_prev() end, opts)
@@ -29,17 +28,8 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-local function lspSymbol(name, icon)
-	vim.fn.sign_define(
-		'DiagnosticSign' .. name,
-		{ text = icon, numhl = 'DiagnosticDefault' .. name }
-	)
-end
-
--- setting up lsp diagnostic symbols
-lspSymbol('Error', '❌')
-lspSymbol('Hint', '💡')
-lspSymbol('Info', '☁️')
-lspSymbol('Warn', '⚠️')
+-- vim.fn.sign_define('DiagnosticSignError', { text = '❌', numhl = 'ErrorMsg' })
+-- vim.fn.sign_define('DiagnosticSignHint', { text = '💡', numhl = 'HintMsg' })
+-- vim.fn.sign_define('DiagnosticSignWarn', { text = '⚠️', numhl = 'WarningMsg' })
 
 lsp.setup()

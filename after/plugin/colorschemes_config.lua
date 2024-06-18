@@ -1,10 +1,3 @@
--- require("gruvbox").setup({
--- 	contrast = "hard",
--- 	dim_inactive = true,
--- 	bold = false,
--- 	-- transparent_mode = true,
--- })
-
 require("nord").setup({
 	-- transparent = true,
 })
@@ -27,10 +20,10 @@ require("onedark").setup({
 -- vim.g.rasmus_variant = "monochrome"
 
 vim.g.gruvbox_material_background = "hard"
-vim.g.gruvbox_material_foreground = "mix"
+-- vim.g.gruvbox_material_foreground = "mix"
 vim.g.gruvbox_material_dim_inactive_windows = true
 vim.g.gruvbox_material_visual = "green background"
--- vim.g.gruvbox_material_ui_contrast = "high"
+vim.g.gruvbox_material_statusline_style = "original" 
 
 -- Setting the colorscheme
-vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme fleet")

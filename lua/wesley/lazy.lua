@@ -73,6 +73,9 @@ require("lazy").setup({
 	{
 		"folke/trouble.nvim",
 	},
+	{
+		"nvim-lualine/lualine.nvim",
+	},
 
 	-- Colorschemes
 	{
@@ -92,5 +95,8 @@ require("lazy").setup({
 	},
 	{
 		"sainnhe/gruvbox-material",
+	},
+	{
+		"felipeagc/fleet-theme-nvim",
 	},
 })
