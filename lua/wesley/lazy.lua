@@ -50,13 +50,12 @@ require("lazy").setup({
 	{"akinsho/toggleterm.nvim"},
 	-- Tabs
 	{
-		'romgrk/barbar.nvim',
+		"akinsho/bufferline.nvim",
 		dependencies = {
-			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
 			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
 		},
 		opts = {},
-		version = '^1.0.0', -- optional: only update when a new 1.x version is released
+		version = '*', -- optional: only update when a new 1.x version is released
 	},
 
 	-- File explorer popup
@@ -79,24 +78,31 @@ require("lazy").setup({
 
 	-- Colorschemes
 	{
-		"gbprod/nord.nvim",
+		"sainnhe/gruvbox-material",
+		priority = 1000,
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
 	},
 	{
 		"rose-pine/neovim",
-	},
-	-- {
-	-- 	"ellisonleao/gruvbox.nvim",
-	-- },
-	{
-		"kvrohit/rasmus.nvim",
+		as = "rose-pine",
+		priority = 1000,
 	},
 	{
-		"navarasu/onedark.nvim",
+		"olivercederborg/poimandres.nvim",
+		priority = 1000,
 	},
 	{
-		"sainnhe/gruvbox-material",
+		"loctvl842/monokai-pro.nvim",
+		priority = 1000,
 	},
 	{
-		"felipeagc/fleet-theme-nvim",
+		"ab-dx/ares.nvim",
+		priority = 1000,
+		dependencies = {
+			"rktjmp/lush.nvim",
+		},
 	},
 })

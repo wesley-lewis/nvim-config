@@ -30,6 +30,6 @@ end)
 
 -- vim.fn.sign_define('DiagnosticSignError', { text = '❌', numhl = 'ErrorMsg' })
 -- vim.fn.sign_define('DiagnosticSignHint', { text = '💡', numhl = 'HintMsg' })
--- vim.fn.sign_define('DiagnosticSignWarn', { text = '⚠️', numhl = 'WarningMsg' })
+-- vim.fn.sign_define('DiagnosticSignWarn', { text = '💡', numhl = 'WarningMsg' })
 
 lsp.setup()

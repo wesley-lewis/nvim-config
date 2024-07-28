@@ -1,29 +1,49 @@
-require("nord").setup({
-	-- transparent = true,
+require("gruvbox").setup({
+	terminal_colors = true,
+	contrast = "hard",
+	bold = false,
+	italic = {
+		strings = false, comments = false,
+	},
+	-- overrides = {
+            -- ["Comment"] = { fg = "#2ea542" },
+	-- },
+	dim_inactive = true,
 })
 
 require("rose-pine").setup({
 	dim_inactive_windows = true,
-	enable = {
-		terminal = true,
-	},
 	styles = {
-		-- transparency = true,
-		italic = false,
+		transparency = true,
 	}
 })
 
-require("onedark").setup({
-	style = "deep",
-})
+function rose_pine_transparent() 
+	-- `rose-pine`
+	require("rose-pine").setup({
+		styles = {
+			transparency = true,
+		}
+	})
+	vim.cmd("colorscheme rose-pine")
+end
 
--- vim.g.rasmus_variant = "monochrome"
+function undo_rp_transparent()
+	require("rose-pine").setup({
+		styles = {
+			transparency = false,
+		}
+	})
+	vim.cmd("colorscheme rose-pine")
+end
 
+-- gruvbox material
 vim.g.gruvbox_material_background = "hard"
--- vim.g.gruvbox_material_foreground = "mix"
 vim.g.gruvbox_material_dim_inactive_windows = true
 vim.g.gruvbox_material_visual = "green background"
 vim.g.gruvbox_material_statusline_style = "original" 
+vim.g.gruvbox_material_enable_italic = 0
+vim.g.gruvbox_material_disable_italic_comment = 1
 
 -- Setting the colorscheme
-vim.cmd("colorscheme fleet")
+vim.cmd("colorscheme gruvbox")
