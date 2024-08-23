@@ -78,10 +78,6 @@ require("lazy").setup({
 
 	-- Colorschemes
 	{
-		"sainnhe/gruvbox-material",
-		priority = 1000,
-	},
-	{
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
 	},
@@ -89,20 +85,5 @@ require("lazy").setup({
 		"rose-pine/neovim",
 		as = "rose-pine",
 		priority = 1000,
-	},
-	{
-		"olivercederborg/poimandres.nvim",
-		priority = 1000,
-	},
-	{
-		"loctvl842/monokai-pro.nvim",
-		priority = 1000,
-	},
-	{
-		"ab-dx/ares.nvim",
-		priority = 1000,
-		dependencies = {
-			"rktjmp/lush.nvim",
-		},
 	},
 })
