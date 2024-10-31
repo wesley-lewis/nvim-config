@@ -1,6 +1,11 @@
 require("wesley.remap")
 require("wesley.lazy")
 
+
+if vim.g.neovide then
+	vim.g.neovide_cursor_animation_length = 0
+end
+
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Custom toggleterm terminal --
@@ -32,6 +37,7 @@ augroup END]]
 
 vim.background = "dark"
 vim.opt.guicursor = "i:block"
+-- vim.opt.guicursor = "i:ver1"
 vim.opt.tabstop = 4
 vim.opt.cursorline = true
 vim.opt.shiftwidth = 4
@@ -41,6 +47,7 @@ vim.opt.swapfile = false
 vim.opt.linespace = 2
 vim.opt.clipboard = "unnamed,unnamedplus"
 
+vim.o.termguicolors = true
 vim.o.hlsearch = true
 vim.o.mouse = 'a'
 vim.o.breakindent = true

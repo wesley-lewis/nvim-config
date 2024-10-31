@@ -23,8 +23,6 @@ require("lazy").setup({
 		build = ":TSUpdate",
 	},
 	'nvim-treesitter/playground',
-	'theprimeagen/harpoon',
-
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v3.x',
@@ -48,6 +46,7 @@ require("lazy").setup({
 		end
 	},
 	{"akinsho/toggleterm.nvim"},
+	{"ThePrimeagen/harpoon"},
 	-- Tabs
 	{
 		"akinsho/bufferline.nvim",
@@ -75,6 +74,13 @@ require("lazy").setup({
 	{
 		"nvim-lualine/lualine.nvim",
 	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	config = function()
+	-- 		require("ibl").setup({
+	-- 		})
+	-- 	end
+	-- },
 
 	-- Colorschemes
 	{
@@ -84,6 +90,10 @@ require("lazy").setup({
 	{
 		"rose-pine/neovim",
 		as = "rose-pine",
+		priority = 1000,
+	},
+	{
+		"tiagovla/tokyodark.nvim",
 		priority = 1000,
 	},
 })
