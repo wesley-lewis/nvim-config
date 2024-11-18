@@ -7,7 +7,7 @@ toggleterm.setup({
 
 function _G.set_terminal_keymaps()
 	local opts = { buffer = 0 }
-	vim.keymap.set('t', 'jj', [[<C-\><C-n>]])
+	-- vim.keymap.set('t', 'jj', [[<C-\><C-n>]])
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')

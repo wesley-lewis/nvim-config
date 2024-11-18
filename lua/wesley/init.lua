@@ -1,11 +1,6 @@
 require("wesley.remap")
 require("wesley.lazy")
 
-
-if vim.g.neovide then
-	vim.g.neovide_cursor_animation_length = 0
-end
-
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Custom toggleterm terminal --
@@ -28,15 +23,20 @@ vim.diagnostic.config({
 	underline = false,
 })
 
-vim.cmd[[ hi MatchParen ctermbg=None ctermfg=yellow]]
+-- vim.cmd[[ hi MatchParen ctermbg=None ctermfg=yellow]]
+-- vim.cmd[[ highlight Visual guibg=#1ecbe1 guifg=Black]]
+vim.cmd[[ highlight Visual guibg=White guifg=Black]]
 
 vim.cmd[[ augroup highlight_yank
     autocmd!
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
 augroup END]]
 
+-- Setting the foreground of Cursor to black.--
+vim.api.nvim_set_hl(0, "Cursor", {fg=Black})
+
 vim.background = "dark"
-vim.opt.guicursor = "i:block"
+-- vim.opt.guicursor = "i:block"
 -- vim.opt.guicursor = "i:ver1"
 vim.opt.tabstop = 4
 vim.opt.cursorline = true
