@@ -17,23 +17,6 @@ local function write_dat_file(filepath, data)
 	file:close()
 end
 
--- require("gruvbox").setup({
--- 	terminal_colors = true,
--- 	contrast = "hard",
--- 	bold = false,
--- 	italic = {
--- 		strings = false, comments = false,
--- 	},
--- 	-- overrides = {
---             -- ["Comment"] = { fg = "#2ea542" },
--- 	-- },
--- 	palette_overrides = {
--- 		-- dark0_hard = "#101010",
--- 		light0_hard = "#000000",
--- 	},
--- 	dim_inactive = true,
--- })
-
 require("rose-pine").setup({
 	dim_inactive_windows = true,
 	styles = {
@@ -65,48 +48,29 @@ require("gruber-darker").setup({
 	}
 })
 
-require("poimandres").setup({
-	dim_nc_background = true,
-	disable_background = false,
+require("onedarkpro").setup({
+	colors = {
+		bg = "#1f2329",
+	},
+	options = {
+		highlight_inactive_windows = true,
+		cursorline = true,
+	}
 })
 
--- Rasmus Config
-vim.g.rasmus_bold_keywords = true
+local function adwaita_setup()
+	vim.g.adwaita_darker = false
+	vim.g.adwaita_disable_cursorline = true
+	vim.g.adwaita_transparent = false 
+end
+local function gruvbox_setup()
+	vim.g.gruvbox_material_background = "hard"
+	vim.g.gruvbox_material_foreground = "original"
+end
+gruvbox_setup()
+adwaita_setup()
 
 -- SETUP END
-
--- function gruvbox_transparent() 
--- 	require("gruvbox").setup({
--- 		transparent_mode = true,
--- 		dim_inactive = true,
--- 		terminal_colors = true,
--- 		contrast = "hard",
--- 		bold = false,
--- 		italic = {
--- 			strings = false, comments = false,
--- 		},
--- 	})
--- 	write_dat_file(dat_file, "gruvbox")
--- 	vim.cmd("colorscheme gruvbox")
--- end
-
--- function gruvbox_opaque()
--- 	require("gruvbox").setup({
--- 		terminal_colors = true,
--- 		contrast = "hard",
--- 		bold = false,
--- 		italic = {
--- 			strings = false, comments = false,
--- 		},
--- 		-- overrides = {
--- 				-- ["Comment"] = { fg = "#2ea542" },
--- 		-- },
--- 		dim_inactive = true,
--- 		transparent_mode = false,
--- 	})
--- 	write_dat_file(dat_file, "gruvbox")
--- 	vim.cmd("colorscheme gruvbox")
--- end
 
 function rose_pine_transparent() 
 	-- `rose-pine`
@@ -186,37 +150,61 @@ function falcon()
 	vim.cmd("colorscheme falcon")
 end
 
-function poimandres_opaque()
-	write_dat_file(dat_file, "poimandres")
-	require("poimandres").setup({
-		disable_background = false,
-	})
-	vim.cmd("colorscheme poimandres")
-end
-
-function poimandres_transparent()
-	write_dat_file(dat_file, "poimandres")
-	require("poimandres").setup({
-		disable_background = true,
-	})
-	vim.cmd("colorscheme poimandres")
-end
-
 function lackluster()
 	write_dat_file(dat_file, "lackluster-hack")
 	vim.cmd("colorscheme lackluster-hack")
 end
 
-function rasmus_opaque()
-	vim.g.rasmus_transparent = false
-	write_dat_file(dat_file, "rasmus")
-	vim.cmd("colorscheme rasmus")
+function onedark_transparent()
+	write_dat_file(dat_file, "onedark_dark")
+	vim.cmd("colorscheme onedark_dark")
 end
 
-function rasmus_transparent()
-	vim.g.rasmus_transparent = true
+function onedark_opaque()
+	write_dat_file(dat_file, "onedark_vivid")
+	vim.cmd("colorscheme onedark_vivid")
+end
+
+function adwaita_transparent()
+	vim.g.adwaita_transparent = true
+	write_dat_file(dat_file, "adwaita")
+	vim.cmd("colorscheme adwaita")
+end
+
+function adwaita_opaque()
+	vim.g.adwaita_transparent = false
+	write_dat_file(dat_file, "adwaita")
+	vim.cmd("colorscheme adwaita")
+end
+
+function rasmus_monochrome()
+	vim.g.rasmus_variant = "monochrome"
 	write_dat_file(dat_file, "rasmus")
-	vim.cmd("colorscheme rasmus")
+	vim.cmd[[colorscheme rasmus]]
+end
+
+function gruverboxer_material()
+	write_dat_file(dat_file, "gruverboxer-material")
+	vim.cmd("colorscheme gruverboxer-material")
+end
+
+function gruvbox()
+	vim.g.gruvbox_material_background = "hard"
+	vim.g.gruvbox_material_foreground = "original"
+	write_dat_file(dat_file, "gruvbox-material")
+	vim.cmd("colorscheme gruvbox-material")
+end
+
+function gruvbox_material()
+	vim.g.gruvbox_material_background = "hard"
+	vim.g.gruvbox_material_foreground = "default"
+	write_dat_file(dat_file, "gruvbox-material")
+	vim.cmd("colorscheme gruvbox-material")
+end
+
+function kanagawa_dragon()
+	write_dat_file(dat_file, "kanagawa-dragon")
+	vim.cmd[[colorscheme kanagawa-dragon]]
 end
 
 -- Setting the colorscheme

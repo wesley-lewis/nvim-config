@@ -1,7 +1,7 @@
 local toggleterm = require("toggleterm")
 toggleterm.setup({
-	direction = "horizontal",
-	size = 15,
+	direction = "float",
+	size = 20,
 	open_mapping = [[<M-j>]]
 })
 

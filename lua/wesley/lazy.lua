@@ -1,3 +1,4 @@
+-- Setup done on booting up lazy first time.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
@@ -56,6 +57,10 @@ require("lazy").setup({
 		opts = {},
 		version = '*', -- optional: only update when a new 1.x version is released
 	},
+	-- Status Line
+	{
+		"https://github.com/lukelbd/vim-statusline",
+	},
 
 	-- File explorer popup
 	{
@@ -63,7 +68,7 @@ require("lazy").setup({
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			-- "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
 			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		}
@@ -71,14 +76,14 @@ require("lazy").setup({
 	{
 		"folke/trouble.nvim",
 	},
-	{
-		"nvim-lualine/lualine.nvim",
-	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		enable = false,
 	},
-
+	-- Multiple Cursors for Neovim
 	{
 		"brenton-leighton/multiple-cursors.nvim",
 		version = "*",  -- Use the latest tagged version
@@ -92,14 +97,19 @@ require("lazy").setup({
 
 			{"<C-LeftMouse>", "<Cmd>MultipleCursorsMouseAddDelete<CR>", mode = {"n", "i"}, desc = "Add or remove cursor"},
 
-			{"<Leader>a", "<Cmd>MultipleCursorsAddMatches<CR>", mode = {"n", "x"}, desc = "Add cursors to cword"},
-			{"<Leader>A", "<Cmd>MultipleCursorsAddMatchesV<CR>", mode = {"n", "x"}, desc = "Add cursors to cword in previous area"},
+			{"<C-a>", "<Cmd>MultipleCursorsAddMatches<CR>", mode = {"n", "x"}, desc = "Add cursors to cword"},
+			{"<C-A>", "<Cmd>MultipleCursorsAddMatchesV<CR>", mode = {"n", "x"}, desc = "Add cursors to cword in previous area"},
 
 			{"<Leader>d", "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", mode = {"n", "x"}, desc = "Add cursor and jump to next cword"},
 			{"<Leader>D", "<Cmd>MultipleCursorsJumpNextMatch<CR>", mode = {"n", "x"}, desc = "Jump to next cword"},
 
 			-- {"<Leader>l", "<Cmd>MultipleCursorsLock<CR>", mode = {"n", "x"}, desc = "Lock virtual cursors"},
 		},
+	},
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
 	},
 	-- Colorschemes
 	{
@@ -124,12 +134,7 @@ require("lazy").setup({
 		lazy = false,
 	},
 	{
-		"slugbyte/lackluster.nvim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"kdheepak/monochrome.nvim",
+		"https://github.com/rebelot/kanagawa.nvim",
 		priority = 1000,
 		lazy = false,
 	},
@@ -149,12 +154,27 @@ require("lazy").setup({
 		lazy = false,
 	},
 	{
-		"olivercederborg/poimandres.nvim",
+		"olimorris/onedarkpro.nvim",
+			priority = 1000,
+			lazy = false,
+	},
+	{
+		"Mofiqul/adwaita.nvim",
+		priority = 1000,
+		lazy = false,
+	},
+	{
+		"sainnhe/gruvbox-material",
 		priority = 1000,
 		lazy = false,
 	},
 	{
 		"kvrohit/rasmus.nvim",
+		priority = 1000,
+		lazy = false,
+	},
+	{
+		"BrunoCiccarino/gruverboxer-material.nvim",
 		priority = 1000,
 		lazy = false,
 	},

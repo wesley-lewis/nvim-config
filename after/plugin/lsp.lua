@@ -28,8 +28,10 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
--- vim.fn.sign_define('DiagnosticSignError', { text = '❌', numhl = 'ErrorMsg' })
--- vim.fn.sign_define('DiagnosticSignHint', { text = '💡', numhl = 'HintMsg' })
--- vim.fn.sign_define('DiagnosticSignWarn', { text = '💡', numhl = 'WarningMsg' })
+-- vim.fn.sign_define('DiagnosticSignError', { text = '>> ', numhl = 'ErrorMsg' })
+vim.fn.sign_define('DiagnosticSignError', { text = '❌', numhl = 'ErrorMsg' })
+vim.fn.sign_define('DiagnosticSignHint', { text = '💡', numhl = 'HintMsg' })
+-- vim.fn.sign_define('DiagnosticSignHint', { text = 'H', numhl = 'HintMsg' })
+vim.fn.sign_define('DiagnosticSignWarn', { text = 'W', numhl = 'WarningMsg' })
 
 lsp.setup()

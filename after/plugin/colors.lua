@@ -1,14 +1,3 @@
--- function Transparent()
--- 	vim.api.nvim_set_hl(0, "Normal", { bg = "none"})
--- 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none"})
--- end
---
--- function Opaque() 
--- 	vim.api.nvim_set_hl(0, "Normal", { bg = "dark" })
--- 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "dark" })
--- end
-
-
 local is_transparent = false
 
 function toggle_transparent()
@@ -20,5 +9,3 @@ function toggle_transparent()
         is_transparent = false
     end
 end
-
--- vim.api.nvim_set_keymap('n', '<F1>', ':lua toggle_transparent()<CR>', { noremap = true, silent = true })
