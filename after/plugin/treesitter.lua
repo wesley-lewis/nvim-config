@@ -14,4 +14,3 @@ require'nvim-treesitter.configs'.setup {
     addtional_vim_regex_highlighting = false,
   },
 }
-

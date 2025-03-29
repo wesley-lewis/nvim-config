@@ -6,7 +6,7 @@ require('mason').setup()
 mason_lsp.setup({
     -- Replace the language servers listed here 
     -- with the ones you want to install
-    ensure_installed = {'eslint', 'gopls','rust_analyzer', 'zls', 'clangd'},
+    ensure_installed = {'eslint', 'gopls', 'zls', 'clangd'},
     handlers = {
       lsp.default_setup,
     },
@@ -28,10 +28,30 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+vim.diagnostic.config({
+	virtual_text = false,
+	signs = {
+		text = {
+			-- [vim.diagnostic.severity.ERROR] = '❌',
+			-- [vim.diagnostic.severity.WARN] = 'W',
+			-- [vim.diagnostic.severity.INFO] = '💡',
+			-- [vim.diagnostic.severity.HINT] = '💡',
+		},
+	},
+	-- signs = false,
+	update_in_insert = false,
+	underline = false,
+	severity_sort = true,
+})
+
+-- mason_lsp.rust_analyzer.setup {
+-- 	autostart = false,
+-- }
+
 -- vim.fn.sign_define('DiagnosticSignError', { text = '>> ', numhl = 'ErrorMsg' })
-vim.fn.sign_define('DiagnosticSignError', { text = '❌', numhl = 'ErrorMsg' })
-vim.fn.sign_define('DiagnosticSignHint', { text = '💡', numhl = 'HintMsg' })
+-- vim.fn.sign_define('DiagnosticSignError', { text = '❌', numhl = 'ErrorMsg' })
+-- vim.fn.sign_define('DiagnosticSignHint', { text = '💡', numhl = 'HintMsg' })
 -- vim.fn.sign_define('DiagnosticSignHint', { text = 'H', numhl = 'HintMsg' })
-vim.fn.sign_define('DiagnosticSignWarn', { text = 'W', numhl = 'WarningMsg' })
+-- vim.fn.sign_define('DiagnosticSignWarn', { text = 'W', numhl = 'WarningMsg' })
 
 lsp.setup()

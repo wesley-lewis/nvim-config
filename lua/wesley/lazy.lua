@@ -58,8 +58,17 @@ require("lazy").setup({
 		version = '*', -- optional: only update when a new 1.x version is released
 	},
 	-- Status Line
+	-- {
+	-- 	"https://github.com/vim-airline/vim-airline", -- minimalist statusline
+	-- },
 	{
-		"https://github.com/lukelbd/vim-statusline",
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' },
+		config = function()
+			require("lualine").setup({
+				theme = 'tokyodark',
+			})
+		end
 	},
 
 	-- File explorer popup
@@ -111,13 +120,18 @@ require("lazy").setup({
 		version = "*",
 		event = "VeryLazy",
 	},
-	-- Colorschemes
 	{
-		"rose-pine/neovim",
-		as = "rose-pine",
-		priority = 1000,
-		lazy = false,
+		"toppair/peek.nvim",
+		event = { "VeryLazy" },
+		build = "deno task --quiet build:fast",
+		config = function()
+			require("peek").setup() 
+			vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+			vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+		end
 	},
+
+	-- Colorschemes
 	{
 		"tiagovla/tokyodark.nvim",
 		priority = 1000,
@@ -134,12 +148,7 @@ require("lazy").setup({
 		lazy = false,
 	},
 	{
-		"https://github.com/rebelot/kanagawa.nvim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"kvrohit/substrata.nvim",
+		"rebelot/kanagawa.nvim",
 		priority = 1000,
 		lazy = false,
 	},
@@ -159,23 +168,57 @@ require("lazy").setup({
 			lazy = false,
 	},
 	{
-		"Mofiqul/adwaita.nvim",
+		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
 		lazy = false,
 	},
+	-- {
+	-- 	"morhetz/gruvbox",
+	-- 	priority = 1000,
+	-- 	lazy = false,
+	-- },
 	{
-		"sainnhe/gruvbox-material",
-		priority = 1000,
+		"dgox16/oldworld.nvim",
 		lazy = false,
+		priority = 1000,
 	},
 	{
-		"kvrohit/rasmus.nvim",
-		priority = 1000,
+		"rose-pine/neovim",
+		as = "rose-pine",
 		lazy = false,
+		priority = 1000,
 	},
 	{
-		"BrunoCiccarino/gruverboxer-material.nvim",
-		priority = 1000,
+		"alexxGmZ/e-ink.nvim",
 		lazy = false,
+		priority = 1000,
+	},
+	{
+		"zenbones-theme/zenbones.nvim",
+		lazy = false,
+		priority = 1000,
+		dependencies = {
+			"rktjmp/lush.nvim"
+		},
+	},
+	{
+		"shaunsingh/nord.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"mcauley-penney/ice-cave.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"MvanDiemen/ghostbuster",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"metalelf0/jellybeans-nvim",
+		lazy = false,
+		priority = 1000,
 	},
 })

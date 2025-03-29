@@ -2,7 +2,7 @@ local dat_file = "/home/wesley/.config/nvim/after/plugin/.dat"
 
 local function read_file(filepath)
 	local file = io.open(filepath, "r")
-	if not file then return "tokyodark" end
+	if not file then return "gruvbox" end
 	local content = file:read("*all")
 	file:close()
 	return content
@@ -17,16 +17,38 @@ local function write_dat_file(filepath, data)
 	file:close()
 end
 
+require("kanagawa").setup({
+	keywordStyle = { italic = false },
+	dimInactive = false,
+})
+
+require("gruvbox").setup({
+	contrast = "hard",
+	transparent_mode = false,
+	dim_inactive = false,
+	italic = {
+		strings = false,
+		emphasis = true,
+		comments = false,
+		operators = false,
+		folds = true,
+	},
+	palette_overrides = {
+		gray = "#2ea542",
+	},
+	inverse = false,
+})
+
 require("rose-pine").setup({
-	dim_inactive_windows = true,
+	dim_inactive_windows = false,
 	styles = {
-		-- transparency = true,
+		transparency = true,
 		italic = false,
-	}
+	},
 })
 
 require("tokyodark").setup({
-	transparent_background = false,
+	transparent_background = true,
 	styles = {
 		comments = { italic = true },
 		keywords = { italic = false },
@@ -38,7 +60,7 @@ require("tokyodark").setup({
 })
 
 require("vscode").setup({
-	transparent = false,
+	transparent = true,
 })
 
 require("gruber-darker").setup({
@@ -58,46 +80,41 @@ require("onedarkpro").setup({
 	}
 })
 
-local function adwaita_setup()
-	vim.g.adwaita_darker = false
-	vim.g.adwaita_disable_cursorline = true
-	vim.g.adwaita_transparent = false 
+
+local function morhetz_gruvbox()
+	vim.g.gruvbox_contrast_dark = "hard"
+	vim.g.gruvbox_invert_selection = 0
 end
-local function gruvbox_setup()
-	vim.g.gruvbox_material_background = "hard"
-	vim.g.gruvbox_material_foreground = "original"
+local function mellow_setup()
+	vim.g.mellow_italic_keywords  = false
+	vim.g.melloc_italic_booleans  = false
+	vim.g.mellow_italic_functions = false
+	vim.g.mellow_italic_variables = false
 end
-gruvbox_setup()
-adwaita_setup()
+local function oldworld_setup()
+	require("oldworld").setup({
+		variant = "default",
+	})
+end
+local function nord_setup()
+	vim.g.nord_italic = false
+	vim.g.nord_contrast = true
+end
+local function zenbones_setup()
+	vim.g.lighten_noncurrent_window = true
+end
+zenbones_setup()
+nord_setup()
+oldworld_setup()
+mellow_setup()
+-- morhetz_gruvbox()
 
 -- SETUP END
-
-function rose_pine_transparent() 
-	-- `rose-pine`
-	require("rose-pine").setup({
-		styles = {
-			transparency = true,
-		}
-	})
-	write_dat_file(dat_file, "rose-pine")
-	vim.cmd("colorscheme rose-pine")
-end
-
-function rose_pine_opaque()
-	require("rose-pine").setup({
-		dim_inactive_windows = true,
-		styles = {
-			transparency = false,
-		}
-	})
-	write_dat_file(dat_file, "rose-pine")
-	vim.cmd("colorscheme rose-pine")
-end
 
 function tokyodark_opaque()
 	require("tokyodark").setup({
 		transparent_background = false,
-		gamma = 1.0,
+		-- gamma = 1.0,
 	})
 	write_dat_file(dat_file, "tokyodark")
 	vim.cmd("colorscheme tokyodark")
@@ -106,7 +123,7 @@ end
 function tokyodark_transparent()
 	require("tokyodark").setup({
 		transparent_background = true,
-		gamma = 0,
+		-- gamma = 0,
 	})
 	write_dat_file(dat_file, "tokyodark")
 	vim.cmd("colorscheme tokyodark")
@@ -150,56 +167,30 @@ function falcon()
 	vim.cmd("colorscheme falcon")
 end
 
-function lackluster()
-	write_dat_file(dat_file, "lackluster-hack")
-	vim.cmd("colorscheme lackluster-hack")
-end
-
 function onedark_transparent()
+	require("onedarkpro").setup({
+		options = {
+			transparency = true,
+		},
+	})
 	write_dat_file(dat_file, "onedark_dark")
 	vim.cmd("colorscheme onedark_dark")
 end
 
+function onelight()
+	vim.background = "light"
+	write_dat_file(dat_file, "onelight")
+	vim.cmd[[colorscheme onelight]]
+end
+
 function onedark_opaque()
-	write_dat_file(dat_file, "onedark_vivid")
-	vim.cmd("colorscheme onedark_vivid")
-end
-
-function adwaita_transparent()
-	vim.g.adwaita_transparent = true
-	write_dat_file(dat_file, "adwaita")
-	vim.cmd("colorscheme adwaita")
-end
-
-function adwaita_opaque()
-	vim.g.adwaita_transparent = false
-	write_dat_file(dat_file, "adwaita")
-	vim.cmd("colorscheme adwaita")
-end
-
-function rasmus_monochrome()
-	vim.g.rasmus_variant = "monochrome"
-	write_dat_file(dat_file, "rasmus")
-	vim.cmd[[colorscheme rasmus]]
-end
-
-function gruverboxer_material()
-	write_dat_file(dat_file, "gruverboxer-material")
-	vim.cmd("colorscheme gruverboxer-material")
-end
-
-function gruvbox()
-	vim.g.gruvbox_material_background = "hard"
-	vim.g.gruvbox_material_foreground = "original"
-	write_dat_file(dat_file, "gruvbox-material")
-	vim.cmd("colorscheme gruvbox-material")
-end
-
-function gruvbox_material()
-	vim.g.gruvbox_material_background = "hard"
-	vim.g.gruvbox_material_foreground = "default"
-	write_dat_file(dat_file, "gruvbox-material")
-	vim.cmd("colorscheme gruvbox-material")
+	require("onedarkpro").setup({
+		options = {
+			transparency = true,
+		},
+	})
+	write_dat_file(dat_file, "onedark")
+	vim.cmd("colorscheme onedark")
 end
 
 function kanagawa_dragon()
@@ -207,7 +198,63 @@ function kanagawa_dragon()
 	vim.cmd[[colorscheme kanagawa-dragon]]
 end
 
+function e_ink()
+	write_dat_file(dat_file, "e-ink")
+	vim.o.background = "light"
+	vim.cmd[[colorscheme e-ink]]
+end
+
+function rose_pine_transparent()
+	write_dat_file(dat_file, "rose-pine-main")
+	require("rose-pine").setup({
+		dim_inactive_windows = true,
+		styles = {
+			transparency = true,
+		},
+	})
+	vim.cmd[[colorscheme rose-pine-main]]
+end
+
+function gruvbox_transparent() 
+	write_dat_file(dat_file, "gruvbox")
+	require("gruvbox").setup({
+		contrast = "hard",
+		dim_inactive = false,
+		inverse = false,
+		transparent_mode = true,
+	})
+	vim.cmd[[colorscheme gruvbox]]
+end
+
+function vscode_transparent()
+	write_dat_file(dat_file, "vscode")
+	require("vscode").setup({
+		transparent = true,
+	})
+	vim.cmd[[colorscheme vscode]]
+end
+
+function change_cs(cs)
+    write_dat_file(dat_file, cs)
+    vim.cmd("colorscheme " .. cs)
+end
+
+function get_cs()
+	print("colorscheme " .. read_file(dat_file))
+end
+
+function tokyobones_transparent()
+	vim.g.tokyobones_transparent_background = true
+	write_dat_file(dat_file, "tokyobones")
+	vim.cmd("colorscheme tokyobones")
+end
+
+function oldworld_transparent()
+	require("oldworld").setup({
+		variant = "oled",
+	})
+end
+
 -- Setting the colorscheme
 local colorscheme = read_file(dat_file)
--- print(colorscheme)
 vim.cmd("colorscheme " .. colorscheme)
