@@ -47,7 +47,6 @@ require("lazy").setup({
 		end
 	},
 	{"akinsho/toggleterm.nvim"},
-	{"ThePrimeagen/harpoon"},
 	-- Tabs
 	{
 		"akinsho/bufferline.nvim",
@@ -130,43 +129,15 @@ require("lazy").setup({
 			vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
 		end
 	},
+	{
+		"https://github.com/folke/todo-comments.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		opts = {},
+	},
 
 	-- Colorschemes
-	{
-		"tiagovla/tokyodark.nvim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"mellow-theme/mellow.nvim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"Mofiqul/vscode.nvim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"rebelot/kanagawa.nvim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"fenetikm/falcon",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"blazkowolf/gruber-darker.nvim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"olimorris/onedarkpro.nvim",
-			priority = 1000,
-			lazy = false,
-	},
 	{
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
@@ -178,47 +149,49 @@ require("lazy").setup({
 	-- 	lazy = false,
 	-- },
 	{
-		"dgox16/oldworld.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
 		"rose-pine/neovim",
 		as = "rose-pine",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"alexxGmZ/e-ink.nvim",
-		lazy = false,
+		"YorickPeterse/Autumn.vim",
 		priority = 1000,
+		lazy = false,
 	},
 	{
-		"zenbones-theme/zenbones.nvim",
-		lazy = false,
+		"xiantang/darcula-dark.nvim",
 		priority = 1000,
+		lazy = false
+	},
+	{
+		"https://github.com/kyazdani42/blue-moon",
+		priority = 1000,
+		lazy = false,
+	},
+	{
+		"https://github.com/chrsm/paramount-ng.nvim",
 		dependencies = {
-			"rktjmp/lush.nvim"
+			"rktjmp/lush.nvim",
 		},
-	},
-	{
-		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"mcauley-penney/ice-cave.nvim",
+		"https://github.com/navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"MvanDiemen/ghostbuster",
+		"https://github.com/marko-cerovac/material.nvim",
 		lazy = false,
 		priority = 1000,
 	},
-	{
-		"metalelf0/jellybeans-nvim",
-		lazy = false,
-		priority = 1000,
-	},
+	-- {
+	-- 	dir = "~/Desktop/lua_projects/scratch_buffer",
+	-- 	name = "scratch-buffer",
+	-- 	config = function()
+	-- 		require("scratch-buffer").setup({})
+	-- 	end
+	-- },
 })

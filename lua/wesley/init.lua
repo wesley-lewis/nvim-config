@@ -7,14 +7,16 @@ if vim.g.neovide then
 	-- vim.o.guifont = "Consolas"
 	-- vim.o.guifont = "FiraCode Nerd Font"
 	vim.opt.linespace = 4
+	vim.opt.guicursor = "i:block"
 	vim.g.neovide_scroll_animation_length = 0.3
 	vim.g.neovide_hide_mouse_when_typing = false
 	vim.g.neovide_refresh_rate = 60
 	vim.g.neovide_fullscreen = true
-	vim.g.neovide_cursor_animation_length = 0
-	vim.g.neovide_cursor_trail_size = 0
+	vim.g.neovide_cursor_animation_length = 0.150
+	vim.g.neovide_cursor_trail_size = 0.5
 	vim.g.neovide_cursor_smooth_blink = true
 	vim.g.neovide_cursor_unfocused_outline_width = 0.3
+	vim.g.neovide_cursor_animate_in_insert_mode = false
 end
 
 -- Custom toggleterm terminal --
@@ -43,7 +45,7 @@ augroup END]]
 
 vim.opt.cursorline = false
 vim.background = "dark"
--- vim.opt.guicursor = "i:blinkon200,i:block"
+-- vim.opt.guicursor = "i:block"
 vim.opt.guicursor = "i:blinkon200,i:ver1"
 vim.opt.tabstop=4
 vim.opt.shiftwidth = 4
