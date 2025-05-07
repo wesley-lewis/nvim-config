@@ -33,10 +33,10 @@ vim.keymap.set('n', "<C-]>", function()
 end)
 ---------------------------------------
 
-vim.diagnostic.config({
-	virtual_text = false,
-	underline = false,
-})
+-- vim.diagnostic.config({
+-- 	virtual_text = false,
+-- 	underline = false,
+-- })
 
 vim.cmd[[ augroup highlight_yank
     autocmd!
@@ -45,17 +45,18 @@ augroup END]]
 
 vim.opt.cursorline = false
 vim.background = "dark"
--- vim.opt.guicursor = "i:block"
+-- vim.opt.guicursor = "i:blinkon200,i:block"
 vim.opt.guicursor = "i:blinkon200,i:ver1"
-vim.opt.tabstop=4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.number = true
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.swapfile = false
 vim.opt.linespace = 4
 vim.opt.clipboard = "unnamed,unnamedplus"
 vim.opt.autoindent = true
 vim.opt.breakindent = true
+-- vim.opt.cursorline = true
 
 vim.o.termguicolors = true
 vim.o.hlsearch = true

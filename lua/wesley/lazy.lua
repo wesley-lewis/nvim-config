@@ -17,7 +17,10 @@ require("lazy").setup({
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.5',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		dependencies = { 
+			'nvim-lua/plenary.nvim',
+			'sharkdp/fd',
+		},
 	},
 	{
 		'nvim-treesitter/nvim-treesitter',
@@ -89,7 +92,7 @@ require("lazy").setup({
 	-- },
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		enable = false,
+		enable = true,
 	},
 	-- Multiple Cursors for Neovim
 	{
@@ -119,22 +122,29 @@ require("lazy").setup({
 		version = "*",
 		event = "VeryLazy",
 	},
-	{
-		"toppair/peek.nvim",
-		event = { "VeryLazy" },
-		build = "deno task --quiet build:fast",
-		config = function()
-			require("peek").setup() 
-			vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-			vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-		end
-	},
+	-- {
+	-- 	"toppair/peek.nvim",
+	-- 	event = { "VeryLazy" },
+	-- 	build = "deno task --quiet build:fast",
+	-- 	config = function()
+	-- 		require("peek").setup() 
+	-- 		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+	-- 		vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+	-- 	end
+	-- },
 	{
 		"https://github.com/folke/todo-comments.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
 		opts = {},
+	},
+	{
+		"smoka7/hop.nvim",
+		version = "*",
+		opts = {
+			keys = "etovxqpdygfblzhckisuran",
+		},
 	},
 
 	-- Colorschemes
@@ -165,11 +175,6 @@ require("lazy").setup({
 		lazy = false
 	},
 	{
-		"https://github.com/kyazdani42/blue-moon",
-		priority = 1000,
-		lazy = false,
-	},
-	{
 		"https://github.com/chrsm/paramount-ng.nvim",
 		dependencies = {
 			"rktjmp/lush.nvim",
@@ -187,11 +192,19 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 	},
-	-- {
-	-- 	dir = "~/Desktop/lua_projects/scratch_buffer",
-	-- 	name = "scratch-buffer",
-	-- 	config = function()
-	-- 		require("scratch-buffer").setup({})
-	-- 	end
-	-- },
+	{
+		"kvrohit/rasmus.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"https://github.com/ribru17/bamboo.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"https://github.com/Mofiqul/vscode.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 })

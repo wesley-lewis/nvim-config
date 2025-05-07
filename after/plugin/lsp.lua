@@ -29,7 +29,8 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 vim.diagnostic.config({
-	virtual_text = false,
+	virtual_text = true,
+	-- virtual_text = false,
 	signs = {
 		text = {
 			-- [vim.diagnostic.severity.ERROR] = '❌',
