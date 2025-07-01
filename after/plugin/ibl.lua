@@ -1,6 +1,7 @@
 require("ibl").setup({
-	enabled = true,
+	enabled = false,
 	scope = { enabled = true },
-	indent = { char = "┊" },
+	indent = { char = "│" },
+	-- indent = { char = "┊" },
 	-- indent = { char = "." },
 })

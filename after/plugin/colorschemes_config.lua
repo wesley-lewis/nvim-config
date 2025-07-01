@@ -17,9 +17,31 @@ local function write_dat_file(filepath, data)
 	file:close()
 end
 
+require("dracula").setup({
+	-- transparent_bg = true,
+	overrides = {
+		["@type.builtin"] = { italic = false },
+		-- Special = { fg = "#87E58E", italic = false },
+	},
+})
+
+require("tokyonight").setup({
+	-- transparent = true,
+	styles = {
+		comments = { italic = true },
+		keywords = { italic = false },
+		functions = { italic = false },
+		variables = { italic = false },
+	},
+})
+
+require("vscode").setup({
+	-- transparent = true,
+})
+
 require("gruvbox").setup({
-	-- contrast = "hard",
-	transparent_mode = false,
+	contrast = "hard",
+	-- transparent_mode = true,
 	dim_inactive = false,
 	bold = false,
 	italic = {
@@ -30,7 +52,7 @@ require("gruvbox").setup({
 		folds = true,
 	},
 	overrides = {
-		Comment = { fg = "#2ea542" },
+		-- Comment = { fg = "#2ea542" },
 		Search = { fg = "#000000", bg = "Orange" },
 		IncSearch = { fg = "#000000", bg = "Orange" },
 	},
@@ -40,28 +62,30 @@ require("gruvbox").setup({
 require("rose-pine").setup({
 	dim_inactive_windows = false,
 	styles = {
-		transparency = false,
+		bold = false,
+		-- transparency = true,
+		-- transparency = false,
 		italic = false,
 	},
 })
 
-require("material").setup({
-	contrast = {
-		terminal = true,
-	},
-})
-
-require("bamboo").setup({
-	dim_inactive = true,
+require('catppuccin').setup({
 	term_colors = true,
-	code_style = {
-		comments = { italic = true },
-		conditionals = { italic = false },
-		namespaces = { italic = false },
-		parameters = { italic = false },
+	no_italic = true,
+	transparent_background = true,
+	styles = {
+		conditionals = { },
+		functions = {},
+		keywords = {},
+		variables = {},
+		numbers = {},
+		booleans = {},
+		properties = {},
+		types = {},
+		operators = {},
 	},
-	highlights = {
-		["@comment"] = { fg = "#928374" },
+	custom_highlights = {
+		-- LineNr = { fg = "#ded8d0" },
 	},
 })
 
@@ -115,10 +139,18 @@ function gruvbox_contrast(contrast)
 	vim.cmd[[colorscheme gruvbox]]
 end
 
-function rasmus_monochrome()
-	vim.g.rasmus_variant = "monochrome"
-	write_dat_file(dat_file, "rasmus")
-	vim.cmd[[colorscheme rasmus]]
+function catppuccin_transparent()
+	require("catppuccin").setup({
+		transparent_background = true,
+	})
+	vim.cmd[[colorscheme catppuccin-mocha]]
+end
+
+function catppuccin_opaque()
+	require("catppuccin").setup({
+		transparent_background = false,
+	})
+	vim.cmd[[colorscheme catppuccin-mocha]]
 end
 
 function change_cs(cs)

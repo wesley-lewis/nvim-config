@@ -165,45 +165,28 @@ require("lazy").setup({
 		priority = 1000,
 	},
 	{
-		"YorickPeterse/Autumn.vim",
-		priority = 1000,
-		lazy = false,
-	},
-	{
-		"xiantang/darcula-dark.nvim",
-		priority = 1000,
-		lazy = false
-	},
-	{
-		"https://github.com/chrsm/paramount-ng.nvim",
-		dependencies = {
-			"rktjmp/lush.nvim",
-		},
-		lazy = false,
-		priority = 1000,
-	},
-	{
 		"https://github.com/navarasu/onedark.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"https://github.com/marko-cerovac/material.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
-		"kvrohit/rasmus.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
-		"https://github.com/ribru17/bamboo.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
 		"https://github.com/Mofiqul/vscode.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"catppuccin/nvim",
+		name = "catpuccin",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"Mofiqul/dracula.nvim",
 		lazy = false,
 		priority = 1000,
 	},

@@ -29,7 +29,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 vim.diagnostic.config({
-	virtual_text = true,
+	-- virtual_text = true,
 	-- virtual_text = false,
 	signs = {
 		text = {
@@ -44,6 +44,13 @@ vim.diagnostic.config({
 	underline = false,
 	severity_sort = true,
 })
+
+-- Adding borders to popups
+-- vim.api.nvim_open_win(bufnr, true, {
+-- 	relative = 'editor',
+-- 	style = 'minimal',
+-- 	border = 'rounded',
+-- })
 
 -- mason_lsp.rust_analyzer.setup {
 -- 	autostart = false,

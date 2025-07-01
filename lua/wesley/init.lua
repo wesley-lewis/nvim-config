@@ -45,7 +45,8 @@ augroup END]]
 
 vim.opt.cursorline = false
 vim.background = "dark"
--- vim.opt.guicursor = "i:blinkon200,i:block"
+-- vim.opt.guicursor = "i:block"
+-- vim.opt.guicursor = "i:blinkon100"
 vim.opt.guicursor = "i:blinkon200,i:ver1"
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
