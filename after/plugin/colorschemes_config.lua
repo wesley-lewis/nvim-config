@@ -17,21 +17,35 @@ local function write_dat_file(filepath, data)
 	file:close()
 end
 
-require("dracula").setup({
-	-- transparent_bg = true,
-	overrides = {
-		["@type.builtin"] = { italic = false },
-		-- Special = { fg = "#87E58E", italic = false },
+require("hybrid").setup({
+	bold = false,
+	italic = {
+		comments = true,
 	},
 })
 
-require("tokyonight").setup({
-	-- transparent = true,
-	styles = {
-		comments = { italic = true },
-		keywords = { italic = false },
-		functions = { italic = false },
-		variables = { italic = false },
+require("catppuccin").setup({
+	no_bold = true,
+	no_underline = true,
+	no_italic = false,
+})
+
+require("gruber-darker").setup({
+	bold = false,
+	italic = {
+		strings = false,
+		comments = true,
+	},
+})
+
+require("onedark").setup({
+	style = "dark",
+	code_style = {
+		comments = "none",
+		keywords = "none",
+		functions = "none",
+		strings = "none",
+		variables = "none",
 	},
 })
 
@@ -64,15 +78,18 @@ require("rose-pine").setup({
 	styles = {
 		bold = false,
 		-- transparency = true,
-		-- transparency = false,
 		italic = false,
+	},
+	highlight_groups = {
+		Cursor = { fg = "white" },
+		Comment = { italic = true },
 	},
 })
 
 require('catppuccin').setup({
 	term_colors = true,
-	no_italic = true,
-	transparent_background = true,
+	no_italic = false,
+	-- transparent_background = true,
 	styles = {
 		conditionals = { },
 		functions = {},
@@ -104,8 +121,7 @@ local function rasmus_setup()
 	vim.g.rasmus_italic_functions = false
 	vim.g.rasmus_italic_variables = false
 end
-rasmus_setup()
--- mellow_setup()
+mellow_setup()
 
 -- SETUP END
 

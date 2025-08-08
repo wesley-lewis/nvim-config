@@ -43,13 +43,23 @@ vim.cmd[[ augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
 augroup END]]
 
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "rust",
+-- 	callback = function()
+-- 		vim.opt_local.shiftwidth = 2
+-- 		vim.opt_local.tabstop = 2
+-- 		vim.opt_local.softabstop = 2
+-- 	end,
+-- })
+
 vim.opt.cursorline = false
 vim.background = "dark"
--- vim.opt.guicursor = "i:block"
+vim.opt.guicursor = "a:blinkon300,i:block"
 -- vim.opt.guicursor = "i:blinkon100"
-vim.opt.guicursor = "i:blinkon200,i:ver1"
+-- vim.opt.guicursor = "i:blinkon200,i:ver1"
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
 vim.opt.number = true
 -- vim.opt.relativenumber = true
 vim.opt.swapfile = false

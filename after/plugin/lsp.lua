@@ -1,12 +1,14 @@
 local lsp = require("lsp-zero")
 local mason_lsp = require('mason-lspconfig')
+require('lspconfig.ui.windows').default_options = { border = 'single' }
 
 require('mason').setup()
 
 mason_lsp.setup({
     -- Replace the language servers listed here 
     -- with the ones you want to install
-    ensure_installed = {'eslint', 'gopls', 'zls', 'clangd'},
+    -- ensure_installed = {'eslint', 'gopls', 'zls', 'clangd'},
+		ensure_installed = { },
     handlers = {
       lsp.default_setup,
     },
@@ -44,13 +46,6 @@ vim.diagnostic.config({
 	underline = false,
 	severity_sort = true,
 })
-
--- Adding borders to popups
--- vim.api.nvim_open_win(bufnr, true, {
--- 	relative = 'editor',
--- 	style = 'minimal',
--- 	border = 'rounded',
--- })
 
 -- mason_lsp.rust_analyzer.setup {
 -- 	autostart = false,

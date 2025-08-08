@@ -153,11 +153,6 @@ require("lazy").setup({
 		priority = 1000,
 		lazy = false,
 	},
-	-- {
-	-- 	"morhetz/gruvbox",
-	-- 	priority = 1000,
-	-- 	lazy = false,
-	-- },
 	{
 		"rose-pine/neovim",
 		as = "rose-pine",
@@ -181,12 +176,22 @@ require("lazy").setup({
 		priority = 1000,
 	},
 	{
-		"folke/tokyonight.nvim",
+		"HoNamDuong/hybrid.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"Mofiqul/dracula.nvim",
+		"blazkowolf/gruber-darker.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"https://github.com/mellow-theme/mellow.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"doums/darcula",
 		lazy = false,
 		priority = 1000,
 	},

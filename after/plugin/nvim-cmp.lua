@@ -3,6 +3,10 @@ local cmp_action = require('lsp-zero').cmp_action()
 
 cmp.setup({
 	preselect = "item",
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+	},
 	completion = {
 		completeopt = "menu,menuone,noinsert"
 	},

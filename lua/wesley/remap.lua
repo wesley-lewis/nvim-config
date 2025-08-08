@@ -16,3 +16,7 @@ vim.keymap.set("v", "gl", "$")
 -- Move to end of file
 vim.keymap.set("n", "ge", "G")
 vim.keymap.set("v", "ge", "G")
+
+-- Save file
+vim.keymap.set("n", "<C-s>", ":w<CR>")
+vim.keymap.set("i", "<C-s>", ":w<CR>")
