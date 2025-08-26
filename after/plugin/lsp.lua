@@ -8,7 +8,7 @@ mason_lsp.setup({
     -- Replace the language servers listed here 
     -- with the ones you want to install
     -- ensure_installed = {'eslint', 'gopls', 'zls', 'clangd'},
-		ensure_installed = { },
+		ensure_installed = { "clangd" },
     handlers = {
       lsp.default_setup,
     },

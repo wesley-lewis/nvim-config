@@ -176,23 +176,17 @@ require("lazy").setup({
 		priority = 1000,
 	},
 	{
-		"HoNamDuong/hybrid.nvim",
+		"maxmx03/solarized.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"blazkowolf/gruber-darker.nvim",
+		"kyza0d/xeno.nvim",
 		lazy = false,
 		priority = 1000,
-	},
-	{
-		"https://github.com/mellow-theme/mellow.nvim",
-		lazy = false,
-		priority = 1000,
-	},
-	{
-		"doums/darcula",
-		lazy = false,
-		priority = 1000,
+		opts = {
+			transparent = true,
+			contrast = 0.1,
+		},
 	},
 })

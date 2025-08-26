@@ -17,25 +17,32 @@ local function write_dat_file(filepath, data)
 	file:close()
 end
 
-require("hybrid").setup({
-	bold = false,
-	italic = {
-		comments = true,
-	},
+require("xeno").new_theme(
+	"xeno1",
+	{
+		base = "#1e1e1e",
+		accent = "#8cbe8c",
+	}
+)
+require("xeno").new_theme(
+	"xeno2",
+	{
+		base = "#1e1e1e",
+		accent = "#2c7bd3",
+	}
+)
+
+require("solarized").setup({
+	styles = {
+		variables = { italic = false },
+		functions = { italic = false },
+	}
 })
 
 require("catppuccin").setup({
 	no_bold = true,
 	no_underline = true,
 	no_italic = false,
-})
-
-require("gruber-darker").setup({
-	bold = false,
-	italic = {
-		strings = false,
-		comments = true,
-	},
 })
 
 require("onedark").setup({
@@ -121,6 +128,12 @@ local function rasmus_setup()
 	vim.g.rasmus_italic_functions = false
 	vim.g.rasmus_italic_variables = false
 end
+function nightvision_setup()
+	-- all possible styles
+	-- pure, gray, jade, lime, pear, drab, aqua, sage, and teal
+	vim.g.nv_dark = "teal"
+end
+nightvision_setup()
 mellow_setup()
 
 -- SETUP END
