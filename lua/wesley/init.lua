@@ -56,11 +56,10 @@ vim.cmd([[
 -- 	end,
 -- })
 
-vim.opt.cursorline = false
-vim.background = "dark"
--- vim.opt.guicursor = "i:blinkon300,i:block"
--- vim.opt.guicursor = "i:blinkon100"
-vim.opt.guicursor = "i:blinkon200,i:ver1"
+vim.opt.cursorline = true 
+vim.o.background = "dark"
+vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"
+-- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2

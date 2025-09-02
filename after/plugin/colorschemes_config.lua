@@ -168,18 +168,9 @@ function gruvbox_contrast(contrast)
 	vim.cmd[[colorscheme gruvbox]]
 end
 
-function catppuccin_transparent()
-	require("catppuccin").setup({
-		transparent_background = true,
-	})
-	vim.cmd[[colorscheme catppuccin-mocha]]
-end
-
-function catppuccin_opaque()
-	require("catppuccin").setup({
-		transparent_background = false,
-	})
-	vim.cmd[[colorscheme catppuccin-mocha]]
+function quiet_light()
+	vim.background = "light"
+	vim.cmd[[colorscheme quiet]]
 end
 
 function change_cs(cs)
