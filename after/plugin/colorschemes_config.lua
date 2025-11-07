@@ -17,6 +17,10 @@ local function write_dat_file(filepath, data)
 	file:close()
 end
 
+require("xeno").config({
+	-- transparent = true
+})
+
 require("xeno").new_theme(
 	"xeno1",
 	{
@@ -31,19 +35,6 @@ require("xeno").new_theme(
 		accent = "#2c7bd3",
 	}
 )
-
-require("solarized").setup({
-	styles = {
-		variables = { italic = false },
-		functions = { italic = false },
-	}
-})
-
-require("catppuccin").setup({
-	no_bold = true,
-	no_underline = true,
-	no_italic = false,
-})
 
 require("onedark").setup({
 	style = "dark",
@@ -128,11 +119,17 @@ local function rasmus_setup()
 	vim.g.rasmus_italic_functions = false
 	vim.g.rasmus_italic_variables = false
 end
-function nightvision_setup()
+local function nightvision_setup()
 	-- all possible styles
 	-- pure, gray, jade, lime, pear, drab, aqua, sage, and teal
 	vim.g.nv_dark = "teal"
 end
+local function adwaita_setup()
+	vim.g.adwaita_darker = true             -- for darker version
+	-- vim.g.adwaita_disable_cursorline = true -- to disable cursorline
+	-- vim.g.adwaita_transparent = true        -- makes the background transparent
+end
+adwaita_setup()
 nightvision_setup()
 mellow_setup()
 
@@ -169,14 +166,17 @@ function gruvbox_contrast(contrast)
 end
 
 function quiet_light()
-	vim.background = "light"
+	vim.o.background = "light"
 	vim.cmd[[colorscheme quiet]]
 end
 
 function change_cs(cs)
 	assert(cs, "Argument must not be nil")
-    write_dat_file(dat_file, cs)
-    vim.cmd("colorscheme " .. cs)
+	if cs == "cat" then
+		cs = "catppuccin-mocha"
+	end
+	write_dat_file(dat_file, cs)
+	vim.cmd("colorscheme " .. cs)
 end
 
 function get_cs()

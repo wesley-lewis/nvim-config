@@ -1,5 +1,6 @@
 require("wesley.remap")
 require("wesley.lazy")
+require("wesley.user_fn")
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
@@ -47,6 +48,24 @@ vim.cmd([[
   highlight Cursor cterm=NONE ctermbg=DarkGray guibg=#3c3c3c
 ]])
 
+-- Set cursor back to bar after exiting Neovim
+vim.api.nvim_create_autocmd("VimLeave", {
+	callback = function()
+		vim.fn.system('echo -ne "\033[1 q"')
+	end
+})
+
+local augroup = vim.api.nvim_create_augroup("NeoTreeTransparency", { clear = true })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	group = augroup,
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "NeoTreeNormal",   { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "NeoTreeNormalNC", { bg = "NONE" })
+	end,
+})
+
 -- vim.api.nvim_create_autocmd("FileType", {
 -- 	pattern = "rust",
 -- 	callback = function()
@@ -56,21 +75,20 @@ vim.cmd([[
 -- 	end,
 -- })
 
-vim.opt.cursorline = true 
+-- vim.opt.cursorline = true
 vim.o.background = "dark"
-vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"
--- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
+-- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"
+vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 vim.opt.swapfile = false
 vim.opt.linespace = 4
 vim.opt.clipboard = "unnamed,unnamedplus"
 vim.opt.autoindent = true
 vim.opt.breakindent = true
--- vim.opt.cursorline = true
 
 vim.o.termguicolors = true
 vim.o.hlsearch = true

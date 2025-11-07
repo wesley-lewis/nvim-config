@@ -6,5 +6,9 @@ require("neo-tree").setup({
 		-- position = "right",
 		width = "30",
 		hide_hidden = false,
+		highlights = {
+			normal = "NONE",
+			normal_nc = "NONE",
+		},
 	}
 })

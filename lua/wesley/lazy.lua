@@ -175,8 +175,18 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 	},
+	-- {
+	-- 	"maxmx03/solarized.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
+	-- {
+	-- 	"https://github.com/shaunsingh/solarized.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- },
 	{
-		"maxmx03/solarized.nvim",
+		"https://github.com/ishan9299/nvim-solarized-lua",
 		lazy = false,
 		priority = 1000,
 	},
@@ -188,5 +198,30 @@ require("lazy").setup({
 			transparent = true,
 			contrast = 0.1,
 		},
+	},
+	{
+		"Mofiqul/adwaita.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"blazkowolf/gruber-darker.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"https://github.com/xiyaowong/transparent.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"nikolvs/vim-sunbather",
+		lazy = false,
+		priority = 1000,
 	},
 })
