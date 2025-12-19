@@ -122,16 +122,17 @@ require("lazy").setup({
 		version = "*",
 		event = "VeryLazy",
 	},
-	-- {
-	-- 	"toppair/peek.nvim",
-	-- 	event = { "VeryLazy" },
-	-- 	build = "deno task --quiet build:fast",
-	-- 	config = function()
-	-- 		require("peek").setup() 
-	-- 		vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
-	-- 		vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
-	-- 	end
-	-- },
+	{
+		"https://github.com/andymass/vim-matchup",
+		-- init = function()
+		-- 	vim.g.matchup_treesitter_stopline = 500
+		-- end,
+		opts = {
+			treesitter = {
+				stopline = 500,
+			}
+		}
+	},
 	{
 		"https://github.com/folke/todo-comments.nvim",
 		dependencies = {
@@ -145,6 +146,24 @@ require("lazy").setup({
 		opts = {
 			keys = "etovxqpdygfblzhckisuran",
 		},
+	},
+
+	-- Plugin to make colorschemes Transparent
+	{
+		"https://github.com/xiyaowong/transparent.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+
+	-- Rendering markdown
+	{
+		'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },            -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.icons' },        -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
 	},
 
 	-- Colorschemes
@@ -175,16 +194,6 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 	},
-	-- {
-	-- 	"maxmx03/solarized.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- },
-	-- {
-	-- 	"https://github.com/shaunsingh/solarized.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- },
 	{
 		"https://github.com/ishan9299/nvim-solarized-lua",
 		lazy = false,
@@ -215,12 +224,12 @@ require("lazy").setup({
 		priority = 1000,
 	},
 	{
-		"https://github.com/xiyaowong/transparent.nvim",
+		"kvrohit/rasmus.nvim",
 		lazy = false,
 		priority = 1000,
 	},
 	{
-		"nikolvs/vim-sunbather",
+		"https://github.com/nendix/zen.nvim.git",
 		lazy = false,
 		priority = 1000,
 	},

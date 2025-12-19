@@ -1,5 +1,6 @@
 -- vim.keymap.set("n", "<leader>e", "<cmd>Neotree filesystem reveal right<CR>")
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree filesystem right<CR>")
+-- vim.keymap.set("n", "<leader>e", "<cmd>Neotree filesystem right<CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree filesystem position=float<CR>")
 
 require("neo-tree").setup({
 	window = {

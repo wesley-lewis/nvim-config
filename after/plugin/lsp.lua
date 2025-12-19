@@ -57,4 +57,14 @@ vim.diagnostic.config({
 -- vim.fn.sign_define('DiagnosticSignHint', { text = 'H', numhl = 'HintMsg' })
 -- vim.fn.sign_define('DiagnosticSignWarn', { text = 'W', numhl = 'WarningMsg' })
 
+
+
 lsp.setup()
+
+vim.lsp.config['ocamllsp'] = {
+	cmd = { 'ocamllsp' },
+	filetypes = { 'ocaml', 'ocaml.interface', 'ocaml.menhir', 'ocaml.ocamllex', 'dune', 'reason' },
+	root_markers = { '*.opam', 'esy.json', 'package.json', '.git', 'dune-project', 'dune-workspace' },
+}
+
+vim.lsp.enable('ocamllsp')

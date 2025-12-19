@@ -36,6 +36,10 @@ require("xeno").new_theme(
 	}
 )
 
+require("zen").setup({
+	keywordStyle = { italic = false },
+})
+
 require("onedark").setup({
 	style = "dark",
 	code_style = {
@@ -52,7 +56,7 @@ require("vscode").setup({
 })
 
 require("gruvbox").setup({
-	contrast = "hard",
+	-- contrast = "hard",
 	-- transparent_mode = true,
 	dim_inactive = false,
 	bold = false,
