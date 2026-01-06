@@ -20,10 +20,14 @@ return {
   { "shaunsingh/nord.nvim" },
   { "Mofiqul/vscode.nvim" },
   { "sainnhe/sonokai" },
+  { "dgox16/oldworld.nvim" },
+  { "HoNamDuong/hybrid.nvim" },
+  { "kaiuri/nvim-juliana" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight-moon",
+      -- colorscheme = "tokyonight-moon",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }

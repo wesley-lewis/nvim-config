@@ -14,4 +14,17 @@ return {
     },
     opts = {},
   },
+  {
+    "danhat1020/colorscheme-picker.nvim",
+    dependencies = {
+      "ibhagwan/fzf-lua",
+      -- or
+      -- "nvim-telescope/telescope.nvim",
+      -- or
+      -- "danhat1020/native-find.nvim"
+    },
+    config = function()
+      require("colorscheme-picker").setup()
+    end,
+  },
 }
