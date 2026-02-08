@@ -2,9 +2,6 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"
-vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
-
 if vim.g.neovide then
   vim.o.guifont = "CaskaydiaCove Nerd Font:h12"
   vim.opt.linespace = 4

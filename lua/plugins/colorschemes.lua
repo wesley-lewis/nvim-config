@@ -2,6 +2,9 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
+    opts = {
+      contrast = "",
+    },
   },
   {
     "https://github.com/catppuccin/nvim",
@@ -22,7 +25,7 @@ return {
   { "sainnhe/sonokai" },
   { "dgox16/oldworld.nvim" },
   { "HoNamDuong/hybrid.nvim" },
-  { "kaiuri/nvim-juliana" },
+  { "xiantang/darcula-dark.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
