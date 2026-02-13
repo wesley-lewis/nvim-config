@@ -16,3 +16,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_unfocused_outline_width = 0.3
   vim.g.neovide_cursor_animate_in_insert_mode = false
 end
+
+vim.o.cursorline = false
+vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
+-- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"

@@ -26,6 +26,7 @@ return {
   { "dgox16/oldworld.nvim" },
   { "HoNamDuong/hybrid.nvim" },
   { "xiantang/darcula-dark.nvim" },
+  { "ofirgall/ofirkai.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {

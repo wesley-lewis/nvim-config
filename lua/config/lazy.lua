@@ -51,6 +51,3 @@ require("lazy").setup({
     },
   },
 })
-
--- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
--- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"
