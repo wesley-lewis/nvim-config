@@ -23,4 +23,12 @@ return {
       require("colorscheme-picker").setup()
     end,
   },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      indent = {
+        enabled = false,
+      },
+    },
+  },
 }

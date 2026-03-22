@@ -5,6 +5,7 @@ return {
       servers = {
         clangd = {},
         ocamllsp = {},
+        ada_ls = {},
       },
     },
   },

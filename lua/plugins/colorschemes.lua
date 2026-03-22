@@ -3,7 +3,16 @@ return {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     opts = {
-      contrast = "",
+      contrast = "hard",
+      bold = false,
+      italic = {
+        strings = false,
+        emphasis = false,
+        comments = true,
+        operators = false,
+        folds = true,
+      },
+      dim_inactive = true,
     },
   },
   {
@@ -19,6 +28,18 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
+    opts = {
+      -- styles = {
+      --   transparency = true,
+      -- },
+      palette = {
+        main = {
+          base = "#000000",
+          -- _nc = "#16141f",
+          -- base = "",
+        },
+      },
+    },
   },
   { "shaunsingh/nord.nvim" },
   { "Mofiqul/vscode.nvim" },
@@ -26,7 +47,9 @@ return {
   { "dgox16/oldworld.nvim" },
   { "HoNamDuong/hybrid.nvim" },
   { "xiantang/darcula-dark.nvim" },
-  { "ofirgall/ofirkai.nvim" },
+  { "nickkadutskyi/jb.nvim" },
+  { "olivercederborg/poimandres.nvim" },
+  { "yardnsm/nvim-base46" },
   {
     "LazyVim/LazyVim",
     opts = {
