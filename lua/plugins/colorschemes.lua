@@ -3,7 +3,7 @@ return {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
     opts = {
-      contrast = "hard",
+      contrast = "",
       bold = false,
       italic = {
         strings = false,
@@ -50,6 +50,10 @@ return {
   { "nickkadutskyi/jb.nvim" },
   { "olivercederborg/poimandres.nvim" },
   { "yardnsm/nvim-base46" },
+  { "connormxfadden/petrolnoir.nvim" },
+  { "alexpasmantier/hubbamax.nvim" },
+  { "pebeto/dookie.nvim" },
+  { "stevedylandev/darkmatter-nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
