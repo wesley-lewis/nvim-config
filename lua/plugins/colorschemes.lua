@@ -54,6 +54,8 @@ return {
   { "alexpasmantier/hubbamax.nvim" },
   { "pebeto/dookie.nvim" },
   { "stevedylandev/darkmatter-nvim" },
+  { "bavajitu/brellary.nvim" },
+  { "ThorstenRhau/token" },
   {
     "LazyVim/LazyVim",
     opts = {
