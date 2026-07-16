@@ -13,6 +13,9 @@ return {
         folds = true,
       },
       dim_inactive = true,
+      palette_overrides = {
+        gray = "#2ea542",
+      },
     },
   },
   {
@@ -34,7 +37,7 @@ return {
       -- },
       palette = {
         main = {
-          base = "#000000",
+          -- base = "#000000",
           -- _nc = "#16141f",
           -- base = "",
         },

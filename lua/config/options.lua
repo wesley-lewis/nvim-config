@@ -18,7 +18,12 @@ if vim.g.neovide then
 end
 
 vim.o.cursorline = true
--- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
-vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"
+vim.opt.guicursor = "i:blinkon300-blinkoff300,i:ver1"
+-- vim.opt.guicursor = "i:blinkon300-blinkoff300,i:block"
 
 vim.g.ada_no_standard_mappings = 1
+
+vim.opt.matchpairs:append("<:>")
+vim.opt.listchars = {
+  tab = "  ",
+}

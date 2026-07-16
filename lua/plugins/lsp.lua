@@ -6,6 +6,7 @@ return {
         clangd = {},
         ocamllsp = {},
         ada_ls = {},
+        zls = {},
       },
     },
   },
